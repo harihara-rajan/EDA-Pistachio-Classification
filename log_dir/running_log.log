@@ -1,1 +1,7 @@
-[2023-12-05 21:21:02,747] : INFO : logger : Welcome to the Pistachio Classification ML System]
+[2023-12-05 22:35:59,646] : INFO : main : Welcome to the Pistachio Classification ML Pipeline]
+[2023-12-05 22:35:59,647] : INFO : main : Data Ingestion stared]
+[2023-12-05 22:35:59,647] : INFO : common : yaml file config.yaml read sucessfully]
+[2023-12-05 22:35:59,648] : INFO : common : yaml file params.yaml read sucessfully]
+[2023-12-05 22:35:59,648] : INFO : common : Created directory artifacts suceessfully]
+[2023-12-05 22:36:01,265] : INFO : s01_data_ingestion : Sucessfully downloaded the dataset from kaggle API]
+[2023-12-05 22:36:01,266] : INFO : main : Data Ingestion Ended]

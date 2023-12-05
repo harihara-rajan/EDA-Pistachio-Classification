@@ -4,7 +4,7 @@ from pathlib import Path
 
 folder_list =[
     "config.yaml",
-    "params.yaml"
+    "params.yaml",
     "src/entity/__init__.py",
     "src/config/__init__.py",
     "src/components/__init__.py",

@@ -1,3 +1,4 @@
 Data_Ingestion:
   root_folder: artifacts/data
+  dataset_name: "muratkokludataset/pistachio-dataset"
  
