@@ -1,4 +1,6 @@
 Data_Ingestion:
   root_folder: artifacts/data
   dataset_name: "muratkokludataset/pistachio-dataset"
- 
+
+Data_Preprocessing:
+  data_folder: artifacts/data/Pistachio_Dataset/Pistachio_28_Features_Dataset/Pistachio_28_Features_Dataset.xlsx

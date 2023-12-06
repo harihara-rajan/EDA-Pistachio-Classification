@@ -5,3 +5,7 @@ from pathlib import Path
 class DataIngestionEntity:
     root_folder : Path
     dataset_name : str
+
+@dataclass(frozen=True)
+class DataPreprocessEntity:
+    data_folder: Path
