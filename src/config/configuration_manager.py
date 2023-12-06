@@ -1,5 +1,5 @@
 from __init__ import PARAMS_PATH, CONFIG_PATH
-from src.entity.config_entity import DataIngestionEntity, DataPreprocessEntity
+from src.entity.config_entity import DataIngestionEntity, DataPreprocessEntity, ModelTrainingEntity
 from src.utils.common import read_yaml
 class ConfigurationManager:
     def __init__(self, CONFIG_PATH= CONFIG_PATH, PARAMS_PATH= PARAMS_PATH):
@@ -16,3 +16,8 @@ class ConfigurationManager:
         config = self.config.Data_Preprocessing
         data_preprocess_entity = DataPreprocessEntity(data_folder=config.data_folder)
         return data_preprocess_entity
+
+    def get_trained_model_config(self)->ModelTrainingEntity:
+        config = self.config.Model_Training
+        model_training_entity = ModelTrainingEntity(trained_model_folder= config.trained_model_folder)
+        return model_training_entity

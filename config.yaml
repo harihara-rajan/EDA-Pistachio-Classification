@@ -4,3 +4,6 @@ Data_Ingestion:
 
 Data_Preprocessing:
   data_folder: artifacts/data/Pistachio_Dataset/Pistachio_28_Features_Dataset/Pistachio_28_Features_Dataset.xlsx
+
+Model_Training:
+  trained_model_folder: artifacts/training/model.pkl

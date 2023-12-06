@@ -9,3 +9,7 @@ class DataIngestionEntity:
 @dataclass(frozen=True)
 class DataPreprocessEntity:
     data_folder: Path
+
+@dataclass(frozen=True)
+class ModelTrainingEntity:
+    trained_model_folder: Path
