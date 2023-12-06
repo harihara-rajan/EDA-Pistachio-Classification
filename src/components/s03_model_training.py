@@ -11,7 +11,7 @@ class ComponentModelTraining:
         create_dirs([self.config.trained_model_folder])
     
     def _load_svm(self)->None:
-        self.svc = SVC()
+        self.svc = SVC(probability=True)
     
     def _save_model(self, model, path)->None:
         with open(path, 'wb') as file:

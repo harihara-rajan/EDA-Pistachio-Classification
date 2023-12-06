@@ -7,12 +7,13 @@ stage01 = "Data Ingestion"
 stage02 = "Data Preprocessing and Model Training"
 
 logging.info(f"{stage01} stared")
-di = ModelTrainingPipeline
+di = DataIngestionPipeline
 di.main()
 logging.info(f"{stage01} Ended")
 
 
 logging.info(f"{stage02} stared")
-di = DataPreprocessingPipeline
-di.main()
+di = ModelTrainingPipeline
+scores = di.main()
+print(scores[0])
 logging.info(f"{stage02} Ended")
