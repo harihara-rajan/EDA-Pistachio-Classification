@@ -16,3 +16,4 @@ class ConfigurationManager:
         config = config.Data_Preprocessing
         data_preprocess_entity = DataPreprocessEntity(data_folder=
                                                       config.data_folder)
+        return data_preprocess_entity
