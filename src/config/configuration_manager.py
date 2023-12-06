@@ -13,7 +13,6 @@ class ConfigurationManager:
         return data_ingestion_entity
 
     def getdata_preprocess_entity(self)->DataPreprocessEntity:
-        config = config.Data_Preprocessing
-        data_preprocess_entity = DataPreprocessEntity(data_folder=
-                                                      config.data_folder)
+        config = self.config.Data_Preprocessing
+        data_preprocess_entity = DataPreprocessEntity(data_folder=config.data_folder)
         return data_preprocess_entity
