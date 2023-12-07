@@ -2,6 +2,8 @@ from src.pipeline.s01_data_ingestion_pipeline import DataIngestionPipeline
 from src.pipeline.s03_model_training_pipeline import ModelTrainingPipeline
 from src.pipeline.s02_data_preprocessing_pipeline import DataPreprocessingPipeline
 from src.logger import logging
+import matplotlib.pyplot as plt
+import seaborn as sns
 logging.info("Welcome to the Pistachio Classification ML Pipeline")
 stage01 = "Data Ingestion"
 stage02 = "Data Preprocessing and Model Training"
@@ -16,4 +18,9 @@ logging.info(f"{stage02} stared")
 di = ModelTrainingPipeline
 scores = di.main()
 print(scores[0])
+print(scores[1])
+print(scores[3])
+a = scores[2]
+plt.title("ROC Curve")
+plt.show()
 logging.info(f"{stage02} Ended")
