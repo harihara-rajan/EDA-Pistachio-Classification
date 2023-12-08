@@ -19,5 +19,9 @@ class ConfigurationManager:
 
     def get_trained_model_config(self)->ModelTrainingEntity:
         config = self.config.Model_Training
-        model_training_entity = ModelTrainingEntity(trained_model_folder= config.trained_model_folder)
+        model_training_entity = ModelTrainingEntity(trained_model_folder= config.trained_model_folder, 
+                                                    model = dict(SVC = self.params.SVC, 
+                                                    LogisticRegression = self.params.LogisticRegression,
+                                                    RandomForestClassifier = self.params.RandomForestClassifier), 
+                                                    name = [key for key in self.params]) 
         return model_training_entity

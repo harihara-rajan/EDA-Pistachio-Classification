@@ -28,3 +28,16 @@ def create_dirs(abspath:list)-> None:
         dirname = os.path.dirname(dir)
         os.makedirs(dirname, exist_ok=True)
     logging.info(f"Created directory {dirname} suceessfully")
+
+if __name__ == "__main__":
+    fname = "params.yaml"
+    content = read_yaml(fname)
+    print(content)
+    content_dict = dict(content.SVC)
+    print(f"content: {content.SVC}----{type(content.SVC)}")
+    print(f"content_dict: {content_dict}----{type(content_dict)}")
+    # for key in content:
+    #     print(key)
+    #     print(f"type - {type(key)}")
+    
+    print(content.get("SVC"))

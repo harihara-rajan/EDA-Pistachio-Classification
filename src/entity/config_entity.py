@@ -1,5 +1,6 @@
 from dataclasses import dataclass
 from pathlib import Path
+from box import ConfigBox
 
 @dataclass(frozen=True)
 class DataIngestionEntity:
@@ -13,3 +14,5 @@ class DataPreprocessEntity:
 @dataclass(frozen=True)
 class ModelTrainingEntity:
     trained_model_folder: Path
+    model: dict
+    name: list

@@ -16,11 +16,12 @@ logging.info(f"{stage01} Ended")
 
 logging.info(f"{stage02} stared")
 di = ModelTrainingPipeline
-scores = di.main()
-print(scores[0])
-print(scores[1])
-print(scores[3])
-a = scores[2]
-plt.title("ROC Curve")
-plt.show()
+di.main()
+# scores = di.main()
+# print(scores[0])
+# print(scores[1])
+# print(scores[3])
+# a = scores[2]
+# plt.title("ROC Curve")
+# plt.show()
 logging.info(f"{stage02} Ended")
