@@ -1,1 +1,13 @@
-key: value
+SVC:
+  probability: True
+  C: 12 
+  gamma: 0.04
+
+LogisticRegression:
+  multi_class: multinomial
+  C: 1 
+  solver: lbfgs
+
+RandomForestClassifier:
+  max_depth: 7
+  max_features: "sqrt"
