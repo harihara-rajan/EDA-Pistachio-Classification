@@ -29,6 +29,14 @@ def create_dirs(abspath:list)-> None:
         os.makedirs(dirname, exist_ok=True)
     logging.info(f"Created directory {dirname} suceessfully")
 
+def write_yaml(abspath, data:dict):
+    """
+    this function takes the path, and the data
+    to store it as a yaml file in abspath.
+    """
+    with open(abspath, 'w') as yamlfile:
+        yaml.dump(data, yamlfile)
+
 if __name__ == "__main__":
     fname = "params.yaml"
     content = read_yaml(fname)

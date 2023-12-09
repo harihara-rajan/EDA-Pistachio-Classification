@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 logging.info("Welcome to the Pistachio Classification ML Pipeline")
 stage01 = "Data Ingestion"
-stage02 = "Data Preprocessing and Model Training"
+stage02 = "Data Preprocessing, Model Training, Model Evaluation"
 
 logging.info(f"{stage01} stared")
 di = DataIngestionPipeline
@@ -17,6 +17,5 @@ logging.info(f"{stage01} Ended")
 logging.info(f"{stage02} stared")
 di = ModelTrainingPipeline
 di.main()
-scores = di.main()
-print(scores)
+di.main()
 logging.info(f"{stage02} Ended")
