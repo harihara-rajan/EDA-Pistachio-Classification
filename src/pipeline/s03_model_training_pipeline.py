@@ -16,6 +16,6 @@ class ModelTrainingPipeline:
         training_components = ComponentModelTraining(model_training_config)
         training_components.train_model(data)
 
-        # evaluation_components = ComponentModelEvaluation(model_training_config)
-        # scores = evaluation_components.evaluate(data[1])
-        return None
+        evaluation_components = ComponentModelEvaluation(model_training_config)
+        scores = evaluation_components.evaluate(data[1])
+        return scores
