@@ -1,13 +1,14 @@
 SVC:
-  probability: True
-  C: 12 
-  gamma: 0.04
+  probability: [True]
+  C: [12, 16, 19, 22, 27, 80] 
+  gamma: [0.001, 0.003, 0.01, 0.04, 0.08, 0.16]
 
 LogisticRegression:
-  multi_class: multinomial
-  C: 1 
-  solver: lbfgs
+  multi_class: [ovr]
+  C: [0.001, 5, 10, 15, 20, 30]
+  solver: [liblinear]
 
 RandomForestClassifier:
-  max_depth: 7
-  max_features: "sqrt"
+  criterion: [gini, entropy, log_loss]
+  max_depth: [3,9, 12, 15, 17, 21, 28]
+  max_features: [sqrt, log2]

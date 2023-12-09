@@ -4,6 +4,7 @@ from sklearn.svm import SVC
 from src.utils.common import create_dirs
 from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import GridSearchCV
 from src.logger import logging
 
 class ComponentModelTraining:
@@ -48,14 +49,19 @@ class ComponentModelTraining:
         for modelname in models:
             self._load_model_for_training(modelname)
             logging.info(f"Loaded the sklearn model ({modelname}) sucessfully")
-            model_params = self.config.model[modelname] # error here
-            self.model.set_params(**model_params)
+            # model_params = self.config.model[modelname] # error here
+            self.gscv = GridSearchCV(self.model, self.config.model[modelname], cv=3)
+            # self.model.set_params(**model_params)
             train_df, test_df = data[0], data[1]
             X_train = train_df[:, 0:-1]
             y_train = train_df[:,-1]
             X_test = test_df[:, 0:-1]
             y_test = test_df[:,-1]
             logging.info(f"Training {modelname} model started")
+            # self.model.fit(X_train, y_train)
+            self.gscv.fit(X_train, y_train)
+            best_params = self.gscv.best_params_
+            self.model.set_params(**best_params)
             self.model.fit(X_train, y_train)
             logging.info(f"Training {modelname} Completed")
             self._save_model(self.model, self.config.trained_model_folder)
