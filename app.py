@@ -5,7 +5,7 @@ app = Flask(__name__)
 path = "artifacts\data\Pistachio_Dataset\Pistachio_28_Features_Dataset\Pistachio_28_Features_Dataset.xlsx"
 features = list(pd.read_excel(path).columns)
 features.pop()
-
+print(features)
 @app.route('/')
 def Home():
     return render_template('index.html', features=features)

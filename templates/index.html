@@ -20,6 +20,18 @@
             align-self: auto;
             margin-left: 10px;
         }
+    input[type="submit"]{
+      background-color: #4CAF50; /* Green */
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 16px;
+      margin: 4px 2px;
+      width: 2000px;
+      cursor: pointer;
+    }
       
       label{
         margin-left: 11px;
@@ -39,20 +51,33 @@
   <h1>Welcome to the Pistachio Classification Web Application </h1>
   <p> 
 
-    Desscription about the Pista Classification 
+    A dataset comprising features extracted from images of the two pistachio varieties is utilized. These features could include characteristics such as color, shape, size, and texture, which are crucial for distinguishing between the varieties. The SVM algorithm is trained on this dataset, learning the optimal decision boundary that separates the two classes (varieties) with maximum margin and minimizes classification errors.
+
+    The training process involves presenting the SVM with labeled examples of both pistachio varieties, allowing the algorithm to learn the patterns and relationships within the data. The SVM then constructs a hyperplane that best separates the feature space into distinct regions corresponding to each pistachio variety.
+    
+    Once the SVM is trained, it can accurately classify new, unseen pistachio samples into the appropriate variety based on the learned decision boundary. This classification is achieved by evaluating the position of each sample relative to the hyperplane.
+    
+    The advantages of using SVM for pistachio classification include its ability to handle non-linear relationships between features, resilience to overfitting, and robustness in high-dimensional spaces. Additionally, SVM provides a clear decision boundary, making it easier to interpret and validate the results.
+    
+    The performance of the SVM classification model can be evaluated using metrics such as accuracy, precision, recall, and F1 score. Fine-tuning parameters, such as the kernel function, during the model training process can optimize classification results.
 
     <form>
       <div class="row">
+        <fieldset> 
+        <legend> "Features Required for Classification of Pistachio" </legend>
         {% for i in range(features|length) %}
           {% if loop.index % 6 == 1 %}
-            </div><div class="row">
+            </div>
+            <div class="row">
           {% endif %}
           <div class="col-2">
             <label for="{{ features[i] }}">{{ features[i] }}:</label>
             <input type="text" id="{{ features[i] }}" name="{{ features[i] }}" class="form-control" required>
           </div>
         {% endfor %}
+        </fieldset>
       </div>
+      <input type="submit" value="Submit">
     </form>
 </body>
 </html>
