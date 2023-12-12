@@ -8,6 +8,7 @@ from sklearn.preprocessing import StandardScaler
 from src.entity.config_entity import DataPreprocessEntity
 from src.logger import logging
 import numpy as np
+import pickle
 
 # preprocess components involve ->loading dataset, scaling the input features, 
 # one-hot-encoding of the categorical columns and splitting into train and 
@@ -50,6 +51,9 @@ class ComponentDataPreprocess:
         X_train_s = np.hstack((X_train_scaled, y_train))
         X_test_s = np.hstack((X_test_scaled, y_test))
         self.data = [X_train_s, X_test_s]
+        preprocess_path = "artifacts/training/SVC_preprocess.pkl"
+        with open(preprocess_path, 'wb') as file:
+            pickle.dump(sc, file)
 
     def preprocess(self):
         # return the train test data after scaling
