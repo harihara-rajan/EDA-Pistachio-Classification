@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <title> Web Application </title>
+  <style>
+    input[type="text"]{
+            width:130px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #a9c9e8; /* Change border color */
+            height: 15px;
+            margin-right: 10px;
+            align-self: auto;
+            margin-left: 10px;
+        }
+      
+      label{
+        margin-left: 11px;
+      }
+
+      legend{
+        color:black;
+        text-align: center;
+      }
+  </style>
+  
+</head>
+
+
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <h1>Welcome to the Pistachio Classification Web Application </h1>
+  <p> 
+
+    Desscription about the Pista Classification 
+
+    <form>
+      <div class="row">
+        {% for i in range(features|length) %}
+          {% if loop.index % 6 == 1 %}
+            </div><div class="row">
+          {% endif %}
+          <div class="col-2">
+            <label for="{{ features[i] }}">{{ features[i] }}:</label>
+            <input type="text" id="{{ features[i] }}" name="{{ features[i] }}" class="form-control" required>
+          </div>
+        {% endfor %}
+      </div>
+    </form>
+</body>
+</html>
